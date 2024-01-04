@@ -293,7 +293,7 @@ function validateForm(event) {
                 </div>
                 <div class="form-group">
                   <label>Payment Method: </label>
-                  <div class="form-check form-check-inline">
+                  <div class="form-check ">
                       <input type="radio" class="form-check-input" id="radio1" name="donationType" value="radio1">
                       <label class="form-check-label" for="radio1">Credit Card</label>
                   </div>
@@ -301,8 +301,8 @@ function validateForm(event) {
                       <input type="radio" class="form-check-input" id="radio2" name="donationType" value="radio2">
                       <label class="form-check-label" for="radio2">Zain Cash</label>
                   </div>
-                  <span id="radioError" style="color:rgb(255, 155, 40)"></span>
-              </div>
+                  
+              </div><span id="radioError"  style="color:rgb(255, 155, 40); "></span>
               <div class="form-group">
                   <label for="credit-card">Credit Card Number:</label>
                   <input placeholder="Do not include spaces" type="text" class="form-control" id="credit-card" name="credit_card" oninput="cardValidation()" >
@@ -334,7 +334,7 @@ function validateForm(event) {
                   <p style="text-align: center;" id="reportPaymentMethod"></p>
                   <p style="text-align:center" id="reportCard"></p>
                   <p style="text-align:center" id="reportExpiry"></p>
-                  <p style="text-align:center" id="reportCVV"></p>
+                  <p style="text-align:center; ;" id="reportCVV"></p>
                  
                
                   
