@@ -130,6 +130,24 @@ function validateCVV(){
   cvvSpan.innerHTML="";
   return true;
 }
+function checkRadio() {
+  var radio1 = document.getElementById('radio1');
+  var radio2 = document.getElementById('radio2');
+  var radioSpan = document.getElementById('radioError');
+
+  if (!radio1.checked && !radio2.checked) {
+    radioError.innerHTML = "Please choose one payment method";
+    return false;
+  } else {
+    if (radio1.checked) {
+      selectedPaymentMethod = "Credit Card";
+    } else if (radio2.checked) {
+      selectedPaymentMethod = "Zain Cash";
+    }
+    radioSpan.innerHTML = "";
+    return true;
+  }
+}
 var cvv= document.getElementById("cvv");
 function validateForm(event) {
     event.preventDefault();
@@ -140,8 +158,8 @@ function validateForm(event) {
     var isCardValid = cardValidation();
     var isExpiryValid = expiryValidation();
     var isCVVValid = validateCVV();
-
-    if (isNameValid && isEmailValid && isAmountValid && isCardValid && isExpiryValid && isCVVValid) {
+    var isRadioValid = checkRadio();
+    if (isNameValid && isEmailValid && isAmountValid && isCardValid && isExpiryValid && isCVVValid && isRadioValid) {
       
         document.getElementById("reportName").innerHTML = "Name: " + document.getElementById("name").value;
         document.getElementById("reportEmail").innerHTML = "Email: " + document.getElementById("email").value;
@@ -150,7 +168,9 @@ function validateForm(event) {
         
         var taxedAmount = parseFloat(document.getElementById("amount").value) * 1.16;
         document.getElementById("reportAmountTaxed").innerHTML = "Donation Amount (After Tax): $" + taxedAmount.toFixed(2);
-
+        document.getElementById("reportPaymentMethod").innerHTML = "Payment Method: " + selectedPaymentMethod;
+        
+      
         var cardNumber = document.getElementById("credit-card").value;
         document.getElementById("reportCard").innerHTML = "Credit Card Number: **** **** **** " + cardNumber.slice(-4);
 
@@ -162,6 +182,8 @@ function validateForm(event) {
         return false;
     }
 }
+
+    </script>
 
 
 
@@ -251,7 +273,7 @@ function validateForm(event) {
     <div class="container">
       <div class="donation-form">
           <h2 class="text-center mb-4">Donation Form</h2>
-          <form action="#" method="get" onsubmit="return validateForm(event)">
+          <form action="#" method="post" onsubmit="return validateForm(event)">
               <div class="form-group">
                   <label for="name">Name:</label>
                   <input  type="text" class="form-control" id="name" name="name" oninput="nameValidation()" >
@@ -269,7 +291,18 @@ function validateForm(event) {
                   <input placeholder="Does not include the 16% tax rate." type="number" class="form-control" id="amount" name="amount" oninput="amountValidation()">
                   <span id="amountError" style="color:rgb(255, 155, 40)"></span>
                 </div>
-
+                <div class="form-group">
+                  <label>Payment Method: </label>
+                  <div class="form-check form-check-inline">
+                      <input type="radio" class="form-check-input" id="radio1" name="donationType" value="radio1">
+                      <label class="form-check-label" for="radio1">Credit Card</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                      <input type="radio" class="form-check-input" id="radio2" name="donationType" value="radio2">
+                      <label class="form-check-label" for="radio2">Zain Cash</label>
+                  </div>
+                  <span id="radioError" style="color:rgb(255, 155, 40)"></span>
+              </div>
               <div class="form-group">
                   <label for="credit-card">Credit Card Number:</label>
                   <input placeholder="Do not include spaces" type="text" class="form-control" id="credit-card" name="credit_card" oninput="cardValidation()" >
@@ -298,9 +331,11 @@ function validateForm(event) {
                   <p style="text-align:center" id="reportEmail"></p>
                   <p style="text-align:center" id="reportAmountUntaxed"></p>
                   <p style="text-align:center" id="reportAmountTaxed"></p>
+                  <p style="text-align: center;" id="reportPaymentMethod"></p>
                   <p style="text-align:center" id="reportCard"></p>
                   <p style="text-align:center" id="reportExpiry"></p>
                   <p style="text-align:center" id="reportCVV"></p>
+                 
                
                   
             </div>
