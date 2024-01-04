@@ -1,0 +1,694 @@
+html{
+    overflow-x:hidden;
+}
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden;
+}
+.donate-body{
+    background-color:#2D1508;
+   
+
+
+}
+
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 100%;
+    background-color: #2D1508;
+    overflow-x: hidden;
+    
+}
+
+a.navbar {
+    background-color: #923401;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+}
+
+nav {
+    overflow: hidden;
+    text-align: center;
+    background-color: #923401;
+}
+
+header ul{
+    list-style-type: none;
+    margin: 0;
+    
+}
+
+header li {
+    display: inline;
+    padding: 10px;
+}
+
+#logonav {
+    width: 60px;
+    vertical-align: middle;
+}
+
+#title {
+    vertical-align: middle;
+    
+}
+
+.navbar:hover {
+    color: rgb(180, 118, 25) !important;
+}
+
+
+
+.index-header {
+ 
+  
+ 
+    width: 100%;
+
+    background-color:#2D1508;
+   
+    
+}
+
+
+#donateBanner {
+    width: 100%;
+    position: relative;
+    margin-top:1em;
+}
+
+.donation-container {
+   
+    width: 100%;
+
+
+}
+
+.donationBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    
+}
+
+.donationBox table {
+    width: 100%;
+    background-color: transparent;
+}
+
+.donationBox table tr{
+    text-align:center;
+}
+.donationBox table td {
+    background-color: transparent;
+    width:50%;
+    padding:5px;
+}
+
+.donation-text {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    margin: 10px;
+    padding: 0.56em;
+}
+
+.donation-button {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    margin-left: 2%;
+    margin-top: 1%;
+    align-items: center;
+    position: absolute;
+}
+
+#donationOther {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 2.2em;
+    width: 8em;
+    
+  
+ text-align:center;
+
+   
+  
+    color: white;
+    border-color:#2D1508;
+    border-style:double;
+border-radius:15%;
+
+
+outline-color:black;
+
+}
+
+
+.donationLabel {
+    padding:10px;
+}
+
+
+
+.donation-text{
+    border-radius:15%;
+    border-style:double;
+    outline-color:black;
+    border-color:#2D1508;
+    text-align:center;
+
+    
+}
+ #other-donation{
+    display:inline;
+  
+    position:relative;
+    
+ }
+ .radioDonation{
+    position:relative;
+
+ }
+
+.card-number{
+    background-color:rgba(0, 0, 0, 0.7);
+    border-style:double;
+    border-radius:15%;
+    outline-color:white;
+    color:white;
+    text-align:center;
+  
+    border-color:#2D1508;
+height:2.5em;
+width:19em
+}
+.expiry-date{
+width:6em;
+height:1.7em;
+}
+.cvv{
+    height:1.7em;
+    width:3em;
+
+}
+.cvv , .expiry-date {
+    background-color:rgba(0, 0, 0, 0.7);
+    border-color:#2D1508;
+    border-style:double;
+    border-radius:15%;
+    outline-color:white;
+    color:white;
+    text-align:center;
+    margin-left:10%;
+}
+
+
+.donationSubmit{
+    position:relative;
+    margin-left:95%;
+border:#2D1508;
+border-style:double;
+width:25%;
+color:white;
+background-color:rgba(0, 0, 0, 0.7);
+
+cursor:pointer;
+
+}
+
+.donate-header{
+  
+ 
+   
+
+    width: 100%;
+ 
+    background-color:#2D1508;
+  
+   
+}
+.getInvolved-header{
+    width:100%;
+    background-color:#2D1508;
+
+}
+.getInvolved-banner img{
+    width:100%;
+    overflow:hidden;
+padding-bottom:1%;
+
+    
+}
+#actiontitle{
+    text-align: center;
+    color:rgba(236, 84, 2, 0.842);
+}
+#hrAction{
+
+width:40%;
+margin-left:30% ;
+border-color:rgba(126, 46, 2, 0.842);
+border-width:0.3em;
+}
+
+
+.Volunteering{
+    color:#ffa55c;
+    padding-left:1.5%;
+
+}
+.Volunteering:hover{
+    color:#923401;
+}
+.Volunteering:visited{
+    color:#FEBD9A;
+}
+.Volunteering:active{
+    color:#6d2600
+}
+#pcrf {
+
+  
+
+
+
+width:100%;
+margin:auto;
+border-style:groove;
+overflow:hidden;
+border-width:1em;
+border-color:rgba(126, 46, 2, 0.842);
+
+height:100%;
+
+}
+
+.getInvolved-body a:hover{
+    color:#923401;
+}    
+.getInvolved-body h1{
+    color:rgb(150, 100,20) !important;
+}
+
+
+.aboutus-body h1 {
+    color:rgb(150, 100,20) !important;
+}
+
+.aboutus-container{
+    background-color:rgba(0,0,0,0.7);
+    border-radius:5%;
+
+    margin-bottom:5%;
+    margin-left: 5%;
+    margin-right:5%;
+
+ 
+    border-style:groove;
+    border-color:rgba(126, 46, 2, 0.842);
+    border-width:0.5em;
+    padding:1em;
+}
+
+.aboutusIMG{
+    width:100%;
+    height:100%;
+    border-style:groove;
+    overflow:hidden;
+    border-width:1em;
+    border-color:rgba(126, 46, 2, 0.842);
+ 
+    
+}
+.aboutus-header{
+   
+
+        width:100%;
+        background-color:#2D1508;
+        
+
+    
+}
+.guide-h1{
+
+text-align:Center;
+color: rgb(150,100,20)
+
+
+}
+
+.main-textGuide{
+    color:White;
+    padding:2em;
+    font-size:175%;
+    text-align: center;
+}
+
+.boycott-statement{
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius:2em;
+    padding:2em;
+    margin-left:20em;
+
+}
+img{
+    margin:0 auto !important; 
+}
+
+.food-boycott{
+
+    background-color:rgba(0, 0, 0, 0.7);
+    width:45%;
+    padding:2em;
+    margin:2em;
+    border-radius: 0.5em;
+    color:white;
+    float:left;
+
+
+}
+.food-alternatives{
+    background-color:rgba(0, 0, 0, 0.7);
+    margin:2em;
+padding:2em;
+    width:45%;
+    border-radius: 0.5em;
+    color:white;
+    float:left;
+}
+
+
+.review-container{
+    margin-top:5%;
+    margin-right:7em;
+    margin-left:7em;
+    color:white;
+    background-color:rgba(245, 127, 0, 0.3 );
+    border-radius:10%;
+    border-style:groove;
+    border-color:#6d2600;
+    padding:2em;
+}
+
+
+.reviewee-name{
+    margin:3%;
+    font-size:175%;
+    text-transform: uppercase;
+    letter-spacing:2px;
+    color:#ffa55c;
+    font-family: Roboto , sans serif;
+    display:inline;
+}
+
+
+.avatar{
+    width:10%;
+
+}
+
+.review-msg{
+
+    text-align:justify;
+    margin:4em;
+}
+
+
+#hero{
+    margin:0;
+}
+
+#hero img{
+    width:100%;
+
+}
+
+.index-h1{
+    margin:2em;
+    text-align:center ; 
+    color:rgba(150,100,20);
+  
+
+}
+
+.index-container{
+    background-color:rgba(0,0,0,0.7);
+margin:2em;
+    
+    border-radius:2em;
+    padding:0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    overflow:hidden;
+
+}
+
+.descriptions-index{
+    color:white;
+    margin:2em;
+    font-size:140%;
+    text-align:center;
+}
+
+
+#slogan{
+    color:#FEDECD;
+    text-align:Center;
+    margin:2em 2em 0em 2em;
+}
+
+
+.learn-more{
+    color: rgb(150, 100,20);
+    margin:1em;
+    text-align:Center;
+}
+
+
+.learn-more a{
+    color:rgb(150, 100,20);
+    
+}
+
+.learn-more a:hover{
+    color:peru;
+}
+
+.learn-more a:active{
+    color:white !important;
+}
+.learn-more a:visited{
+    color:rgb(150, 100,20);
+}
+
+.cta{
+    background-color:#9234018a;
+
+border-color:white;
+border-style:solid;
+
+
+width:100%;
+border-radius:2%;
+
+
+
+
+
+
+}
+
+.options-header{
+    margin: 1em 2em 2em 2em;
+    color:lightsalmon;
+    text-align:center;
+
+
+}
+
+
+.global-footer{
+    background-color:#923401;
+    color:white;
+
+
+}
+
+.contact-div{
+    background-color:rgba(245, 127, 0, 0.3 );
+    border-style: groove;
+    border-top-width:5em;
+    border-radius:1em;
+    border-color:#923401;
+   padding-top:2em;
+   padding-bottom:5em;
+    
+   
+    width:50%;
+    margin:auto;
+    margin-top:2em;
+    margin-bottom:2em;
+  
+
+}
+
+.contact-info{
+margin-left:3em;
+color:white;
+background-color:rgba(0, 0, 0, 0.7);
+border-color:transparent;
+width:50%;
+padding:1em;
+border-radius:2em;
+margin-top:1em;  
+font-size:18px;
+
+}
+
+#textArea{
+    margin-left:3em;
+    color:white;
+    background-color:rgba(0, 0, 0, 0.7);
+    border-color:transparent;
+    width: 50%;
+    height:35%;
+    padding:1em;
+    border-radius:2em;
+    margin-top:1em;  
+    font-size:18px;    
+}
+
+
+#contact-submit{
+    background-color:rgba(0, 0, 0, 0.9);
+    color:white;
+    width:50%;
+    height:10%;
+    border:none;
+    border-radius:5em;
+    font-size:18px;
+    cursor:pointer;
+  margin-left:3em;
+  margin-top:2em;
+    
+
+}
+
+
+@media (max-width: 576px) {
+    .index-container .cta {
+        flex-basis: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        
+    }
+}
+
+#footer{
+    border-color:#6d2600   ;
+    border-style: groove;
+    border-radius:0;
+    border-width: 0.5em;
+    padding:1em;
+    padding-bottom:0em;
+   background-color:#923401;
+}
+
+.footer-list{
+color:white;
+text-decoration: underline;
+margin-bottom:0.5em;
+}
+.footer-list:hover{
+color:black;
+}
+
+@media (max-width: 576px) {
+  .review-container{
+    font-size:12px;
+  }
+    body{
+        overflow-x:hidden;
+    }
+    .boycott-statement {
+        flex-basis: 100%;
+        margin-right:2em;
+        margin-bottom: 20px;
+        font-size:10px;
+        padding:1em;
+
+       
+    }
+    .guide-h1{
+        font-size:18px;
+    }
+    .imggg{
+        width:20%;
+    }
+}
+
+.donation-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color:white;
+    
+}
+
+button {
+    background-color: #6d2600 !important;
+    border-color:#2D1508 !important;
+    color: white !important;
+}
+
+button:hover {
+    background-color: #682100 !important;
+}
+
+button:active{
+    border-color:white !important;
+}
+
+
+input{
+  background-color:#ffffffe8 !important;
+  color:black !important;
+
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color:rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color:white;
+    
+}
+
+.review-card{
+    background-color:#b64508;
+    color:white;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+

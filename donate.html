@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<script>
+function updateDateTime(){
+var currentDate = new Date();
+var formattedDate= currentDate.toLocaleDateString();
+var formattedTime= currentDate.toLocaleTimeString();
+
+document.getElementById("dateTime").innerHTML="Date : " +formattedDate + "<br><br>"  + "Time : " + formattedTime;
+
+}
+setInterval(updateDateTime,1000);
+
+updateDateTime();
+
+
+
+function nameValidation() {
+  var nameInput = document.getElementById("name");
+  var nameTrimmed = nameInput.value.trim();
+  var nameSpan = document.getElementById("nameError");
+
+  if (nameTrimmed === '') {
+    nameSpan.innerHTML = "Enter a valid name.";
+    return false;
+  }
+
+  if (/\d/.test(nameTrimmed)) {
+    nameSpan.innerHTML = "Name should not contain any numbers.";
+    return false;
+  }
+
+  nameSpan.innerHTML = "";
+  return true;
+}
+
+function emailValidation() {
+  var emailInput = document.getElementById("email");
+  var emailTrimmed = emailInput.value.trim();
+  var emailSpan = document.getElementById("emailError");
+
+  if (emailTrimmed === "") {
+    emailSpan.innerHTML = "Please enter a valid email";
+    return false;
+  }
+
+  emailSpan.innerHTML = "";
+  return true;
+}
+
+function amountValidation() {
+  var amountInput = document.getElementById("amount");
+  var amount = parseFloat(amountInput.value);
+  var amountSpan = document.getElementById("amountError");
+
+  if (amount <= 0 || isNaN(amount)) {
+    amountSpan.innerHTML = "Please enter a numerical amount greater than 0";
+    return false;
+  }
+
+  amountSpan.innerHTML = "";
+  return true;
+}
+
+function cardValidation() {
+  var cardNumberInput = document.getElementById("credit-card");
+  var cardNumberTrimmed = cardNumberInput.value.trim();
+  var cardNumber = cardNumberTrimmed.length;
+  var cardSpan = document.getElementById("cardError");
+
+  for(var i = 0 ; i<cardNumber ; i++){
+  if(isNaN(parseInt(cardNumberTrimmed[i]))){
+    cardSpan.innerHTML="Card should only contain numbers";
+    return false;
+
+  }
+}
+
+  if (cardNumber < 16 || cardNumber > 16) {
+    cardSpan.innerHTML = "Card number should be 16 digits long";
+    return false;
+  }
+else
+
+
+  cardSpan.innerHTML = "";
+  return true;
+}
+
+function expiryValidation(){
+  var expiryInput = document.getElementById("expiry-date");
+  var expiryDate = expiryInput.value.trim();
+  var expirySpan = document.getElementById("expiryError");
+
+  var month = expiryDate.substring(0,2);
+  var slash = expiryDate.substring(2,3);
+  var year = expiryDate.substring(3,7);
+  
+  var monthNo = parseInt(month);
+  var yearNo = parseInt(year);
+
+  if(monthNo < 1 || monthNo > 12 || isNaN(monthNo)){
+    expirySpan.innerHTML="Enter a valid month from January [01] - December [12]";
+    return false;
+  }
+
+   else if(slash !== "/"){
+    expirySpan.innerHTML="Input (/) after correct month format [01-12] ";
+    return false;
+  }
+  else if(expiryDate.length > 7 || expiryDate.length<7){
+    expirySpan.innerHTML="Enter a valid date (MM/YYYY)";
+return false;
+  }
+
+  expirySpan.innerHTML=""
+  return true;
+}
+
+function validateCVV(){
+  var cvvInput = document.getElementById("cvv");
+  var cvv = cvvInput.value.trim();
+  var cvvSpan = document.getElementById("cvvError");
+  cvvInt = parseInt(cvv);
+
+  if(cvv.length!== 3 || /\D/.test(cvv)){
+    cvvSpan.innerHTML="Input CVV in correct format. e.g: 123";
+    return false;
+  }
+  cvvSpan.innerHTML="";
+  return true;
+}
+function validateForm() {
+
+  var isNameValid = nameValidation();
+  var isEmailValid = emailValidation();
+  var isAmountValid = amountValidation();
+  var isCardValid = cardValidation();
+  var isExpiryValid = expiryValidation();
+  var isCVVValid = validateCVV();
+
+
+  if (isNameValid && isEmailValid && isAmountValid && isCardValid && isExpiryValid && isCVVValid) {
+   
+    return true;
+  } else {
+    
+    return false;
+  }
+}
+
+
+
+</script>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    
+</head>
+
+<body class="aboutus-body" style="background-color:#4d1b00">
+
+    <header class="donate-header">
+        <br>
+        <center>
+          
+            <img id="logonav" src="images/logo.png" alt="logo">
+            <h1 id="title" style="display:inline;"><a href="index.html" style="text-decoration:none; color:white;">Heart for Palestine</a></h1>
+      
+            <br>
+          <br>
+        </center>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo" style="height:2em;"> Heart for Palestine </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="products.html">Ethical Shopping Guide</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="getInvolved.html">Get Involved </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="reviews.html">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="donate.html">Donate<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="sitemap.html">Sitemap</a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+    
+    </header>
+    <div class="container mt-3">
+      <div class="row">
+          <div class="col-12">
+              <p id="dateTime" class="text-center" style="color:White;"></p>
+          </div>
+      </div>
+  </div>
+    
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="guide-h1" style="font-size:28px; margin-top : 1em; color:white !important;">    
+            <p>Your generosity makes a difference! Every contribution helps us in our mission.</p>
+      </h1>
+      <hr style="border-color:rgba(126, 46, 2, 0.842); border-width:0.3em; margin-left:5%; margin-right:6%;">
+
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <div class="donation-form">
+          <h2 class="text-center mb-4">Donation Form</h2>
+          <form action="#" method="post" onsubmit="return validateForm()">
+              <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input  type="text" class="form-control" id="name" name="name" oninput="nameValidation()" >
+                  <span id="nameError" style="color:rgb(255, 155, 40)"></span>
+              </div>
+
+              <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email" name="email" oninput="emailValidation()" >
+                  <span id="emailError" style="color:rgb(255, 155, 40)"></span>
+                </div>
+
+              <div class="form-group">
+                  <label for="amount">Donation Amount:</label>
+                  <input placeholder="Does not include the 16% tax rate." type="number" class="form-control" id="amount" name="amount" oninput="amountValidation()">
+                  <span id="amountError" style="color:rgb(255, 155, 40)"></span>
+                </div>
+
+              <div class="form-group">
+                  <label for="credit-card">Credit Card Number:</label>
+                  <input placeholder="Do not include spaces" type="text" class="form-control" id="credit-card" name="credit_card" oninput="cardValidation()" >
+                  <span id="cardError" style="color:rgb(255, 155, 40)"></span>
+                </div>
+
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label for="expiry-date">Expiry Date (MM/YYYY):</label>
+                      <input type="text" class="form-control" id="expiry-date" name="expiry_date" oninput="expiryValidation()">
+                      <span id="expiryError" style="color:rgb(255, 155, 40)"></span>
+                    </div>
+
+                  <div class="form-group col-md-6">
+                      <label for="cvv">CVV:</label>
+                      <input type="text" oninput="validateCVV()" class="form-control" id="cvv" name="cvv">
+                      <span id="cvvError" style="color:rgb(255, 155, 40)"></span>
+                    </div>
+              </div>
+              
+
+              <button type="submit" class="btn btn-primary btn-block" onclick="donationConfirmation()">Donate Now</button>
+          </form>
+        </div>
+  </div>
+
+<br><br>
+<footer class="text-white mt-5" id="footer">
+  <div class="container" style="background-color:#923401b5">
+      <div class="row">
+          <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <p>Address: Applied Science University, Amman, Jordan.</p>
+              <p>Phone: 0795847657</p>
+              <p>Email: heart4palestine@hfp.org</p>
+          </div>
+          <div class="col-md-4">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled footer-list">
+                  <li class="footer-list"><a class="footer-list" href="index.html">Home</a></li>
+                  <li><a class="footer-list" href="products.html">Ethical Shopping Guide</a></li>
+                  <li><a class="footer-list" href="aboutus.html">About Us</a></li>
+                  <li><a class="footer-list" href="donate.html">Donate</a></li>
+                  <li><a class="footer-list" href="getInvolved.html">Get Involved</a></li>
+                  <li><a class="footer-list" href="reviews.html">Reviews</a></li>
+              </ul>
+          </div>
+          <div class="col-md-4">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled">
+                  <li><a class="footer-list" href="contact.html">Contact Us</a></li>
+                  <li><a class="footer-list" href="sitemap.html">Sitemap</a></li>
+              </ul>
+          </div>
+      </div>
+      <hr class="my-4">
+      <p class="text-center">&copy; 2024 Heart for Palestine. All rights reserved.</p>
+  </div>
+</footer>
+
+    
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

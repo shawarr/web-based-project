@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Heart for Palestine</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script>
+  function nameValidation() {
+  var nameInput = document.getElementById("name");
+  var nameTrimmed = nameInput.value.trim();
+  var nameSpan = document.getElementById("nameError");
+
+  if (nameTrimmed === '') {
+    nameSpan.innerHTML = "Enter a valid name.";
+    return false;
+  }
+
+  if (/\d/.test(nameTrimmed)) {
+    nameSpan.innerHTML = "Name should not contain any numbers.";
+    return false;
+  }
+
+  nameSpan.innerHTML = "";
+  return true;
+}
+
+function emailValidation() {
+  var emailInput = document.getElementById("email");
+  var emailTrimmed = emailInput.value.trim();
+  var emailSpan = document.getElementById("emailError");
+
+  if (emailTrimmed === "") {
+    emailSpan.innerHTML = "Please enter a valid email";
+    return false;
+  }
+
+  emailSpan.innerHTML = "";
+  return true;
+}
+function messageValidation(){
+  var messageInput = document.getElementById("message");
+  var messageTrimmed = messageInput.value.trim();
+  var messageSpan = document.getElementById("messageError");
+
+  if (messageTrimmed === ""){
+    messageSpan.innerHTML="Please enter a message";
+    return false;
+  }
+  messageSpan.innerHTML="";
+  return true;
+}
+
+  function validateForm(){
+    var isNameValid = nameValidation();
+    var isEmailValid = emailValidation();
+    var isMessageValid = messageValidation();
+    if (isNameValid && isEmailValid && isMessageValid) {
+   
+   return true;
+ } else {
+   
+   return false;
+ }
+  }
+
+
+
+</script>
+</head>
+
+<body class="index-body" style="background-color:#4d1b00;">
+    <header class="index-header">
+        <center>
+            <br>
+            <img id="logonav" src="images/logo.png" alt="logo">
+            <h1 id="title" style="display:inline;"><a href="index.html" style="text-decoration:none; color:white;">Heart for Palestine</a></h1>
+            <br>
+            <br>
+        </center>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo" style="height:2em;"> Heart for Palestine </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="products.html">Ethical Shopping Guide</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="getInvolved.html">Get Involved </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="reviews.html">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="donate.html">Donate<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="contact.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="sitemap.html">Sitemap</a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+         </header>
+         <h1 style="padding-top:1em;;text-align:center; color:rgb(150,100,20); font-family:Roboto , sans serif; text-transform:uppercase; letter-spacing: 0.2em; font-size:150%">Contact us</h1>
+         <hr
+             style="border-color:rgba(126, 46, 2, 0.842); border-width:0.3em; margin-left:35%; margin-right:35%;margin-top:0.2em;">
+     
+
+
+             <div class="container">
+              <div class="contact-form">
+                  <h2 class="text-center mb-4">Your Contact Information</h2>
+                  <form action="#" method="post" onclick="validateForm()">
+                      <div class="form-group">
+                          <label for="name">Your Name:</label>
+                          <input type="text" class="form-control" id="name" name="name" onInput="nameValidation()">
+                          <span id="nameError" style="color:rgb(255,155,40)"></span>
+                        </div>
+                      <div class="form-group">
+                          <label for="email">Your Email:</label>
+                          <input type="email" class="form-control" id="email" name="email" oninput="emailValidation()" >
+                          <span id="emailError" style="color:rgb(255,155,40)"></span>
+                        </div>
+                      <div class="form-group">
+                          <label for="message">Your Message:</label>
+                          <textarea class="form-control" id="message" name="message" rows="4" oninput="messageValidation()" ></textarea>
+                          <span id="messageError" style="color:rgb(255,155,40)"></span>
+                        </div>
+                      <button type="submit" class="btn btn-primary">  <a  style="color:white;" href="mailto:ahmadshawar04@gmail.com">Submit</a>
+                        </button>
+                  </form>
+              </div>
+          </div>
+
+
+<footer class="text-white mt-5" id="footer">
+  <div class="container" style="background-color:#923401b5">
+      <div class="row">
+          <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <p>Address: Applied Science University, Amman, Jordan.</p>
+              <p>Phone: 0795847657</p>
+              <p>Email: heart4palestine@hfp.org</p>
+          </div>
+          <div class="col-md-4">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled footer-list">
+                  <li class="footer-list"><a class="footer-list" href="index.html">Home</a></li>
+                  <li><a class="footer-list" href="products.html">Ethical Shopping Guide</a></li>
+                  <li><a class="footer-list" href="aboutus.html">About Us</a></li>
+                  <li><a class="footer-list" href="donate.html">Donate</a></li>
+                  <li><a class="footer-list" href="getInvolved.html">Get Involved</a></li>
+                  <li><a class="footer-list" href="reviews.html">Reviews</a></li>
+              </ul>
+          </div>
+          <div class="col-md-4">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled">
+                  <li><a class="footer-list" href="contact.html">Contact Us</a></li>
+                  <li><a class="footer-list" href="sitemap.html">Sitemap</a></li>
+              </ul>
+          </div>
+      </div>
+      <hr class="my-4">
+      <p class="text-center">&copy; 2024 Heart for Palestine. All rights reserved.</p>
+  </div>
+</footer>
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
