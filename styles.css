@@ -45,6 +45,7 @@ header ul{
 
 header li {
     display: inline;
+    
     padding: 10px;
 }
 
@@ -435,7 +436,7 @@ padding:2em;
 }
 
 .index-h1{
-    margin:2em;
+    padding:1em;
     text-align:center ; 
     color:rgba(150,100,20);
   
@@ -499,7 +500,9 @@ margin:2em;
 
 border-color:white;
 border-style:solid;
-
+display:flex;
+flex-direction:column;
+align-items:center;
 
 width:100%;
 border-radius:2%;
@@ -511,8 +514,9 @@ border-radius:2%;
 
 }
 
-.options-header{
-    margin: 1em 2em 2em 2em;
+
+.options-header {
+ padding:2em;
     color:lightsalmon;
     text-align:center;
 
@@ -613,7 +617,7 @@ text-decoration: underline;
 margin-bottom:0.5em;
 }
 .footer-list:hover{
-color:black;
+color:black !important;
 }
 
 @media (max-width: 576px) {
