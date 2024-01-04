@@ -130,24 +130,39 @@ function validateCVV(){
   cvvSpan.innerHTML="";
   return true;
 }
-function validateForm() {
+var cvv= document.getElementById("cvv");
+function validateForm(event) {
+    event.preventDefault();
 
-  var isNameValid = nameValidation();
-  var isEmailValid = emailValidation();
-  var isAmountValid = amountValidation();
-  var isCardValid = cardValidation();
-  var isExpiryValid = expiryValidation();
-  var isCVVValid = validateCVV();
+    var isNameValid = nameValidation();
+    var isEmailValid = emailValidation();
+    var isAmountValid = amountValidation();
+    var isCardValid = cardValidation();
+    var isExpiryValid = expiryValidation();
+    var isCVVValid = validateCVV();
 
+    if (isNameValid && isEmailValid && isAmountValid && isCardValid && isExpiryValid && isCVVValid) {
+      
+        document.getElementById("reportName").innerHTML = "Name: " + document.getElementById("name").value;
+        document.getElementById("reportEmail").innerHTML = "Email: " + document.getElementById("email").value;
+        document.getElementById("reportAmountUntaxed").innerHTML = "Donation Amount (Before Tax): $" + document.getElementById("amount").value;
 
-  if (isNameValid && isEmailValid && isAmountValid && isCardValid && isExpiryValid && isCVVValid) {
-   
-    return true;
-  } else {
-    
-    return false;
-  }
+        
+        var taxedAmount = parseFloat(document.getElementById("amount").value) * 1.16;
+        document.getElementById("reportAmountTaxed").innerHTML = "Donation Amount (After Tax): $" + taxedAmount.toFixed(2);
+
+        var cardNumber = document.getElementById("credit-card").value;
+        document.getElementById("reportCard").innerHTML = "Credit Card Number: **** **** **** " + cardNumber.slice(-4);
+
+        document.getElementById("reportExpiry").innerHTML = "Expiry Date: " + document.getElementById("expiry-date").value;
+        document.getElementById("reportCVV").innerHTML = "CVV: " + document.getElementById("cvv").value;
+
+        return true;
+    } else {
+        return false;
+    }
 }
+
 
 
 
@@ -236,7 +251,7 @@ function validateForm() {
     <div class="container">
       <div class="donation-form">
           <h2 class="text-center mb-4">Donation Form</h2>
-          <form action="#" method="post" onsubmit="return validateForm()">
+          <form action="#" method="post" onsubmit="return validateForm(event)">
               <div class="form-group">
                   <label for="name">Name:</label>
                   <input  type="text" class="form-control" id="name" name="name" oninput="nameValidation()" >
@@ -270,14 +285,27 @@ function validateForm() {
 
                   <div class="form-group col-md-6">
                       <label for="cvv">CVV:</label>
-                      <input type="text" oninput="validateCVV()" class="form-control" id="cvv" name="cvv">
+                      <input type="text" class="form-control" id="cvv" name="cvv" oninput="validateCVV()">
                       <span id="cvvError" style="color:rgb(255, 155, 40)"></span>
                     </div>
               </div>
               
+              
 
-              <button type="submit" class="btn btn-primary btn-block" onclick="donationConfirmation()">Donate Now</button>
+              <button type="submit" class="btn btn-primary btn-block">Donate Now</button>
+              <div class="form-group mt-3">
+                  <p style="text-align:center" id="reportName"></p>
+                  <p style="text-align:center" id="reportEmail"></p>
+                  <p style="text-align:center" id="reportAmountUntaxed"></p>
+                  <p style="text-align:center" id="reportAmountTaxed"></p>
+                  <p style="text-align:center" id="reportCard"></p>
+                  <p style="text-align:center" id="reportExpiry"></p>
+                  <p style="text-align:center" id="reportCVV"></p>
+               
+                  
+            </div>
           </form>
+         
         </div>
   </div>
 
