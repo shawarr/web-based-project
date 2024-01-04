@@ -55,18 +55,27 @@ function messageValidation(){
   return true;
 }
 
-  function validateForm(){
+function validateForm(event) {
+    event.preventDefault();
+
     var isNameValid = nameValidation();
     var isEmailValid = emailValidation();
     var isMessageValid = messageValidation();
+
+
     if (isNameValid && isEmailValid && isMessageValid) {
-   
-   return true;
- } else {
-   
-   return false;
- }
-  }
+      
+        document.getElementById("reportName").innerHTML = "Name: " + document.getElementById("name").value;
+        document.getElementById("reportEmail").innerHTML = "Email: " + document.getElementById("email").value;
+        document.getElementById("reportMessage").innerHTML = "Your message is : " + document.getElementById("message").value;
+
+    
+
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
 
@@ -127,7 +136,7 @@ function messageValidation(){
              <div class="container">
               <div class="contact-form">
                   <h2 class="text-center mb-4">Your Contact Information</h2>
-                  <form action="#" method="post" onclick="validateForm()">
+                  <form action="#" method="post" onclick="validateForm(event)">
                       <div class="form-group">
                           <label for="name">Your Name:</label>
                           <input type="text" class="form-control" id="name" name="name" onInput="nameValidation()">
@@ -145,6 +154,12 @@ function messageValidation(){
                         </div>
                       <button type="submit" class="btn btn-primary">  <a  style="color:white;" href="mailto:ahmadshawar04@gmail.com">Submit</a>
                         </button>
+                        <div class="form-group mt-3">
+                          <p style="text-align:center" id="reportName"></p>
+                          <p style="text-align:center" id="reportEmail"></p>
+                          <p style="text-align:center" id="reportMessage"></p>
+
+                    </div>
                   </form>
               </div>
           </div>
